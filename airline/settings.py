@@ -27,7 +27,7 @@ SECRET_KEY =  os.environ.get('DJANGO_SECRET_KEY', 'default-key')
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-DEBUG = os.environ.get('DEBUG', 'False') == 'True'
+DEBUG = os.environ.get('DEBUG', 'True') == 'True'
 
 
 # Application definition
@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'airline.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-if not os.environ.get('DEBUG', 'False') == 'True':
+if not os.environ.get('DEBUG', 'True') == 'True':
     DATABASES = {
         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
